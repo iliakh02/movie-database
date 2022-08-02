@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
+import MovieListView from './components/MovieListView/MovieListView';
 import { MovieResponse, MovieService } from './services/MovieService';
 import IMovie from './Types/Movie.type';
 
 function App() {
-  const [movies, setMovies] = useState([] as IMovie[]);
+  const [movies, setMovies] = useState<IMovie[]>([]);
   const service = new MovieService();
-  let dataResponse: MovieResponse;
   useEffect(() => {
-    const getTop250Movies = async () => {
-      const data = await service.getTop250Movies();
-      setMovies(data.Movies);
-    };
-
-    getTop250Movies().catch(console.error);
-  });
-
+    service.getTop250Movies().then((data) => setMovies(data.Movies));
+  }, []);
+  console.log(movies);
   return (
     <div className="App">
       <Header />
-      <div className="container"></div>
+      <div className="container">
+        <MovieListView
+          listName="Top 250 movies of all time:"
+          movieList={movies}
+        />
+      </div>
     </div>
   );
 }

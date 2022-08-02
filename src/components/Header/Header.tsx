@@ -22,7 +22,7 @@ function Header() {
               icon={faSearch}
               color="#000d26"
               className="search-icon"
-            ></FontAwesomeIcon>
+            />
           </div>
         </div>
       </div>

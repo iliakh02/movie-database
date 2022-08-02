@@ -16,7 +16,10 @@ function App() {
     <div className="App">
       <Header />
       <div className="container">
-        <MovieListView movieList={movies} />
+        <MovieListView
+          listName="Top 250 movies of all time:"
+          movieList={movies}
+        />
       </div>
     </div>
   );

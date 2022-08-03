@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Header.css';
 import logoImg from '../../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-function Header() {
+
+interface HeaderProps {
+  setSearchQuery: Function;
+}
+
+const Header = ({ setSearchQuery }: HeaderProps) => {
+  const onPressEnter = (event: any) => {
+    // console.log(event.key);
+
+    if (event.key === 'Enter') {
+      console.log('Enter key pressed ✅');
+      // console.log(event.target.value);
+      setSearchQuery(event.target.value);
+    }
+  };
+
   return (
     <header className="App-header">
       <div className="container">
@@ -17,6 +32,7 @@ function Header() {
               className="search-input"
               placeholder="Search"
               datatype="text"
+              onKeyDown={onPressEnter}
             />
             <FontAwesomeIcon
               icon={faSearch}
@@ -28,6 +44,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

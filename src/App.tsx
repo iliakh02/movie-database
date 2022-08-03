@@ -7,14 +7,21 @@ import IMovie from './Types/Movie.type';
 
 function App() {
   const [movies, setMovies] = useState<IMovie[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const service = new MovieService();
   useEffect(() => {
-    service.getMostPopularMovies().then((data) => setMovies(data));
-  }, []);
+    if (searchQuery === '') {
+      service.getMostPopularMovies().then((data) => setMovies(data));
+    } else {
+      // console.log('from App' + searchQuery);
+      // debugger;
+      service.getSearchedMovies(searchQuery).then((data) => setMovies(data));
+    }
+  }, [searchQuery]);
   console.log(movies);
   return (
     <div className="App">
-      <Header />
+      <Header setSearchQuery={setSearchQuery} />
       <div className="container">
         <MovieListView listName="Most popular movies:" movieList={movies} />
       </div>

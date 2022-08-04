@@ -16,7 +16,7 @@ function MovieListView({ listName, movieList }: MovieListProps) {
       <div className="movie-container">
         {movieList.map((movie) => {
           return (
-            <div className="movie-item">
+            <div className="movie-item" key={movie.id}>
               <img
                 className="movie-image"
                 src={movie.image}

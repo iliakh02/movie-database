@@ -36,7 +36,7 @@ export class MovieService implements MovieServiceBase {
     return response;
   }
 
-  async getSearchedMovies(searchString: string): Promise<IMovie[]> {
+  async getMoviesBySearchQuery(searchString: string): Promise<IMovie[]> {
     const requestURL = `${BASE_API_URI}/SearchMovie/${API_KEY}/${searchString}`;
     let response: IMovie[] = [];
     const { data } = await axios.get(requestURL);

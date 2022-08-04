@@ -3,19 +3,22 @@ import './Header.css';
 import logoImg from '../../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   setSearchQuery: Function;
 }
 
-const Header = ({ setSearchQuery }: HeaderProps) => {
+const Header = () => {
+  let navigate = useNavigate();
   const onPressEnter = (event: any) => {
     // console.log(event.key);
 
     if (event.key === 'Enter') {
       console.log('Enter key pressed ✅');
+      navigate(`/search/${event.target.value}`);
       // console.log(event.target.value);
-      setSearchQuery(event.target.value);
+      // setSearchQuery(event.target.value);
     }
   };
 

@@ -4,5 +4,5 @@ import { MovieListResponse } from '../MovieService';
 export interface MovieServiceBase {
   getTop250Movies(): Promise<IMovie[]>;
   getMostPopularMovies(): Promise<IMovie[]>;
-  getSearchedMovies(searchString: string): Promise<IMovie[]>;
+  getMoviesBySearchQuery(searchString: string): Promise<IMovie[]>;
 }

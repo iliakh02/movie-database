@@ -33,36 +33,6 @@
   font-family: 'Roboto', sans-serif;
   font-size: calc(5px + 2vmin);
 }
-.rating {
-  display: flex;
-  align-items: center;
-  color: gold;
-  font-size: calc(2px + 2vmin);
-  position: absolute;
-  right: 2px;
-  top: 341px;
-  background-color: gray;
-  padding: 5px;
-  border: 1px solid gold;
-  border-radius: 100%;
-  justify-content: center;
-  text-align: center;
-}
-.rating-value {
-  margin: 0 2px;
-  line-height: 18px;
-}
-
-@media (max-width: 1200px) {
-  .rating {
-    top: 249px;
-  }
-}
-@media (max-width: 992px) {
-  .rating {
-    top: 197px;
-  }
-}
 
 @media (max-width: 768px) {
   .movie-container {
@@ -70,9 +40,6 @@
   }
   .movie-item:nth-child(2n+2) {
     margin-right: 0;
-  }
-  .rating {
-    top: 264px;
   }
 }
 
@@ -83,10 +50,6 @@
   .movie-item {
     margin: 0 auto 40px!important;
     width: 100%;
-  }
-  .rating {
-    top: 356px;    
-    font-size: calc(5px + 2vmin); 
   }
   .movie-title {
     font-size: calc(8px + 2vmin);

@@ -16,16 +16,13 @@ function MovieListView({ listName, movieList }: MovieListProps) {
       <div className="movie-container">
         {movieList.map((movie) => {
           return (
-            <div className="movie-item">
+            <div className="movie-item" key={movie.id}>
               <img
                 className="movie-image"
                 src={movie.image}
-                alt={movie.fullTitle}
+                alt={movie.title}
               />
-              <div className="rating">
-                <p className="rating-value">{movie.imDbRating}</p>
-              </div>
-              <p className="movie-title">{movie.fullTitle}</p>
+              <p className="movie-title">{movie.title}</p>
             </div>
           );
         })}

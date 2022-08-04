@@ -13,10 +13,9 @@ const MostPopularMovies = () => {
   }, []);
   console.log(movies);
   return (
-    <>
-      {/* <Header /> */}
+    <div className="container">
       <MovieListView listName="Most popular movies:" movieList={movies} />
-    </>
+    </div>
   );
 };
 

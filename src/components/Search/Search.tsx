@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MovieService } from '../../services/MovieService';
 import IMovie from '../../Types/Movie.type';
-import Header from '../Header/Header';
 import MovieListView from '../MovieListView/MovieListView';
 
 const Search = () => {
@@ -17,10 +16,16 @@ const Search = () => {
   }, [searchQuery]);
 
   return (
-    <>
-      {/* <Header /> */}
-      <MovieListView listName={'Search result:'} movieList={movies} />
-    </>
+    <div className="container">
+      <MovieListView
+        listName={
+          movies.length > 0
+            ? `Search result for "${searchQuery}":`
+            : `No result found for "${searchQuery}"`
+        }
+        movieList={movies}
+      />
+    </div>
   );
 };
 

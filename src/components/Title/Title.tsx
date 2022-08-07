@@ -16,10 +16,10 @@ const Title = () => {
   const { id } = useParams<string>();
   const movieService = new MovieService();
   useEffect(() => {
-    setTitle(JSON.parse(JSON.stringify(TitleJ)));
-    // movieService
-    //   .getTilteInfo(id as string)
-    //   .then((data: IMovieDetails) => setTitle(data));
+    // setTitle(JSON.parse(JSON.stringify(TitleJ)));
+    movieService
+      .getTilteInfo(id as string)
+      .then((data: IMovieDetails) => setTitle(data));
   }, [id]);
 
   const actorSliderSettings = {
@@ -97,7 +97,11 @@ const Title = () => {
       </div>
       <div className="wrapper">
         <div className="movie-media">
-          <img src={title?.image} alt={title?.title} className="movie-image" />
+          <img
+            src={title?.image}
+            alt={title?.title}
+            className="movie-main-image"
+          />
           <iframe
             className="frame-trailer"
             src={`${title?.trailer.linkEmbed}?autoplay=false`}

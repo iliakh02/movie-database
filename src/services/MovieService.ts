@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { API_KEY, BASE_API_URI } from '../constants';
 import { MovieServiceBase } from './abstract/MovieServiceBase';
-import IMovie from '../Types/Movie.type';
+import IMovie, { IMovieDetails } from '../Types/Movie.type';
 import movies from '../MovieDatabase.json';
 
 export interface MovieListResponse {
@@ -41,6 +41,17 @@ export class MovieService implements MovieServiceBase {
     let response: IMovie[] = [];
     const { data } = await axios.get(requestURL);
     response = data.results;
+    console.log(response);
+    return response;
+  }
+
+  async getTilteInfo(id: string): Promise<any> /*Promise<IMovieDetails>*/ {
+    const requestURL = `${BASE_API_URI}/Title/${API_KEY}/${id}/FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia,`;
+    let response: IMovieDetails[] = [];
+    const { data } = await axios.get(requestURL);
+    console.log('movie details');
+    console.log(data);
+    response = data;
     console.log(response);
     return response;
   }

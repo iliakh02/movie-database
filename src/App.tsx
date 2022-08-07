@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import { Routes, Route } from 'react-router-dom';
-import Search from './components/Search/Search';
-import MostPopularMovies from './components/MostPopularMovies/MostPopularMovies';
-import Title from './components/Title/Title';
+import Search from './pages/Search/Search';
+import MostPopularMovies from './pages/MostPopularMovies/MostPopularMovies';
+import Title from './pages/Title/Title';
 
 const App = () => {
   return (

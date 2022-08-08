@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MovieService } from '../../services/MovieService';
 import IMovie from '../../Types/Movie.type';
-import MovieListView from '../MovieListView/MovieListView';
+import MovieListView from '../../components/MovieListView/MovieListView';
 
 const Search = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);

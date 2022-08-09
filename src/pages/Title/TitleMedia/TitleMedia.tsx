@@ -1,5 +1,4 @@
 import React from 'react';
-import { IMovieDetails } from '../../Types/Movie.type';
 import './TitleMedia.css';
 
 type TitleMediaProps = {
@@ -21,7 +20,6 @@ const TitleMedia = (props: TitleMediaProps) => {
           className="frame-trailer"
           src={`${props.trailerLinkEmbed}?autoplay=false`}
           allowFullScreen
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           frameBorder="0"
           scrolling="0"
         ></iframe>

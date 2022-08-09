@@ -96,18 +96,6 @@ export interface IMovieDetails {
   stars: string;
   starList: IPerson[];
   actorList: IActor[];
-  fullCast: {
-    imDbId: string;
-    title: string;
-    fullTitle: string;
-    type: string;
-    year: number;
-    directors: IWorkingTeam;
-    writers: IWorkingTeam;
-    actors: IActor[];
-    others: IEmployer[];
-    errorMessage: string;
-  };
   genres: string;
   genreList: KeyValuePair[];
   companies: string;
@@ -120,32 +108,6 @@ export interface IMovieDetails {
   imDbRating: number;
   imDbRatingVotes: number;
   metacriticRating: number;
-  ratings: {
-    imDbId: string;
-    title: string;
-    fullTitle: string;
-    type: string;
-    year: number;
-    imDb: number;
-    metacritic: number;
-    theMovieDb: number;
-    rottenTomatoes: number;
-    filmAffinity: number;
-    errorMessage: string;
-  };
-  wikipedia: {
-    imDbId: string;
-    title: string;
-    fullTitle: string;
-    type: string;
-    year: number;
-    language: string;
-    titleInLanguage: string;
-    url: string;
-    plotShort: IPlot;
-    plotFull: IPlot;
-    errorMessage: string;
-  };
   posters: {
     imDbId: string;
     title: string;

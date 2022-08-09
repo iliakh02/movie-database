@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import './MovieDescription.css';
-import { KeyValuePair, IActor } from '../../Types/Movie.type';
+import { KeyValuePair, IActor } from '../../../Types/Movie.type';
 
 type MovieDescriptionProps = {
   genreList: KeyValuePair[];
@@ -68,7 +68,7 @@ const MovieDescription = (props: MovieDescriptionProps) => {
     <div className="wrapper">
       <div className="movie-description">
         <div className="genres">
-          {props.genreList.map((genre) => (
+          {props.genreList?.map((genre) => (
             <Link to={`/genres/${genre.key}`}>{genre.value}</Link>
           ))}
         </div>
@@ -89,7 +89,7 @@ const MovieDescription = (props: MovieDescriptionProps) => {
             <b>Actors:</b>
           </p>
           <Slider {...actorSliderSettings}>
-            {props.actorList.map((actor: IActor) => (
+            {props.actorList?.map((actor: IActor) => (
               <div className="actor" key={actor.id}>
                 <img
                   src={actor.image}
@@ -108,7 +108,7 @@ const MovieDescription = (props: MovieDescriptionProps) => {
             <b>Photos:</b>
           </p>
           <Slider {...photosSliderSettings}>
-            {props.images.items.map((photo: any) => (
+            {props.images.items?.map((photo: any) => (
               <div className="photo">
                 <img
                   src={photo.image}

@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { API_KEY, BASE_API_URI } from '../constants';
 import { MovieServiceBase } from './abstract/MovieServiceBase';
 import IMovie, { IMovieDetails } from '../Types/Movie.type';

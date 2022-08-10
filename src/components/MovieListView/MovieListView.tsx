@@ -1,7 +1,5 @@
 import React from 'react';
 import IMovie from '../../Types/Movie.type';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons';
 import './MovieListView.css';
 import { Link } from 'react-router-dom';
 

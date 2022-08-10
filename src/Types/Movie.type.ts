@@ -1,10 +1,7 @@
-import { ParamKeyValuePair } from 'react-router-dom';
-
 export default interface IMovie {
   id: string;
   rank: number;
   title: string;
-  fullTitle: string;
   year: number;
   image: string;
   crew: string;
@@ -59,16 +56,6 @@ export interface IImage {
 }
 
 export interface ITrailer {
-  imDbId: string;
-  title: string;
-  fullTitle: string;
-  type: string;
-  year: number;
-  videoId: string;
-  videoTitle: string;
-  videoDescription: string;
-  thumbnailUrl: string;
-  uploadDate: null;
   link: string;
   linkEmbed: string;
   errorMessage: string;
@@ -78,52 +65,28 @@ export interface IMovieDetails {
   id: string;
   title: string;
   originalTitle: string;
-  fullTitle: string;
   type: string;
   year: number;
   image: string;
   releaseDate: Date;
-  runtimeMins: number;
   runtimeStr: string;
   plot: string;
-  plotLocal: string;
-  plotLocalIsRtl: boolean;
-  awards: string;
   directors: string;
-  directorList: IPerson[];
   writers: string;
-  writerList: IPerson[];
   stars: string;
-  starList: IPerson[];
   actorList: IActor[];
   genres: string;
   genreList: KeyValuePair[];
   companies: string;
   companyList: ICompany[];
-  countries: string;
-  countryList: KeyValuePair[];
-  languages: string;
-  languageList: KeyValuePair[];
   contentRating: string;
   imDbRating: number;
   imDbRatingVotes: number;
-  metacriticRating: number;
   posters: {
-    imDbId: string;
-    title: string;
-    fullTitle: string;
-    type: string;
-    year: number;
     posters: IImage[];
-    backdrops: IImage[];
     errorMessage: string;
   };
   images: {
-    imDbId: string;
-    title: string;
-    fullTitle: string;
-    type: string;
-    year: string;
     items: [
       {
         title: string;
@@ -135,15 +98,5 @@ export interface IMovieDetails {
   trailer: ITrailer;
   boxOffice: {
     budget: string;
-    openingWeekendUSA: string;
-    grossUSA: string;
-    cumulativeWorldwideGross: string;
   };
-  tagline: null;
-  keywords: string;
-  keywordList: string[];
-  similars: IMovie[];
-  tvSeriesInfo: null;
-  tvEpisodeInfo: null;
-  errorMessage: null;
 }

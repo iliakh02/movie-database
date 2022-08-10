@@ -48,6 +48,7 @@
 }
 .imdb-rating-value, .imdb-rating-votes {
   margin: 0;
+  font-size: calc(6px + 1vmin);
 }
 .imdb-rating-number {
   color: white;

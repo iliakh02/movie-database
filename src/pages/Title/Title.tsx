@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MovieService } from '../../services/MovieService';
-import { IActor, IMovieDetails, KeyValuePair } from '../../Types/Movie.type';
+import { IMovieDetails } from '../../Types/Movie.type';
 import TitleJ from '../../shabolda.json';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -11,7 +11,13 @@ import MovieDescription from './MovieDescription/MovieDescription';
 import './Title.css';
 
 const Title = () => {
-  const [title, setTitle] = useState<IMovieDetails>();
+  const [title, setTitle] = useState<IMovieDetails>({
+    trailer: {},
+    boxOffice: {},
+    images: {
+      items: [{}],
+    },
+  } as IMovieDetails);
   const { id } = useParams<string>();
   const movieService = new MovieService();
   useEffect(() => {
@@ -24,27 +30,27 @@ const Title = () => {
   return (
     <div className="container">
       <TitleTop
-        titleName={title?.title as string}
-        year={title?.year as number}
-        contentRating={title?.contentRating as string}
-        runtimeStr={title?.runtimeStr as string}
-        imDbRating={title?.imDbRating as number}
-        imDbRatingVotes={title?.imDbRatingVotes as number}
+        titleName={title?.title}
+        year={title?.year}
+        contentRating={title?.contentRating}
+        runtimeStr={title?.runtimeStr}
+        imDbRating={title?.imDbRating}
+        imDbRatingVotes={title?.imDbRatingVotes}
       />
       <TitleMedia
-        image={title?.image as string}
-        titleName={title?.title as string}
-        trailerLinkEmbed={title?.trailer.linkEmbed as string}
+        image={title?.image}
+        titleName={title?.title}
+        trailerLinkEmbed={title?.trailer.linkEmbed}
       />
       <MovieDescription
-        genreList={title?.genreList as KeyValuePair[]}
-        plot={title?.plot as string}
-        directors={title?.directors as string}
-        writers={title?.writers as string}
-        actorList={title?.actorList as IActor[]}
-        images={title?.images as any}
-        budget={title?.boxOffice.budget as string}
-        companies={title?.companies as string}
+        genreList={title?.genreList}
+        plot={title?.plot}
+        directors={title?.directors}
+        writers={title?.writers}
+        actorList={title?.actorList}
+        images={title?.images}
+        budget={title?.boxOffice.budget}
+        companies={title?.companies}
       />
     </div>
   );

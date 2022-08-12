@@ -8,7 +8,7 @@ interface MovieListProps {
   movieList: IMovie[];
 }
 
-function MovieListView({ listName, movieList }: MovieListProps) {
+const MovieListView = ({ listName, movieList }: MovieListProps) => {
   return (
     <>
       <h3 className="movie-list-name">{listName}</h3>
@@ -30,6 +30,6 @@ function MovieListView({ listName, movieList }: MovieListProps) {
       </div>
     </>
   );
-}
+};
 
 export default MovieListView;

@@ -12,13 +12,18 @@ const TitleMedia = (props: TitleMediaProps) => {
     <div className="wrapper">
       <div className="movie-media">
         <img
-          src={props.image}
+          src={props.image
+            ?.split('.')
+            .splice(0, 3)
+            .concat('_V1_UX300_CR0,4_AL_.jpg')
+            .join('.')}
           alt={props.titleName}
           className="movie-main-image"
+          loading="lazy"
         />
         <iframe
           className="frame-trailer"
-          src={`${props.trailerLinkEmbed}?autoplay=false`}
+          src={`${props?.trailerLinkEmbed}?autoplay=false`}
           allowFullScreen
           frameBorder="0"
           scrolling="0"

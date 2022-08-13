@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './MovieFilter.css';
 
 const MovieFilter = () => {
   const url = window.location.href.split('/');
   const filterName = url[url.length - 1];
-  console.log('filterName: ' + filterName);
   return (
     <div className="movie-filter-block">
       <Link

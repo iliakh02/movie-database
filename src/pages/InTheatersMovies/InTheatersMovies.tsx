@@ -10,7 +10,6 @@ const InTheatersMovies = () => {
   useEffect(() => {
     service.getInTheaters().then((data) => setMovies(data));
   }, []);
-  console.log(movies);
   return (
     <div className="container">
       <MovieFilter />

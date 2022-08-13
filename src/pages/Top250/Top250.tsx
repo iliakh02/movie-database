@@ -10,7 +10,6 @@ const Top250 = () => {
   useEffect(() => {
     service.getTop250Movies().then((data) => setMovies(data));
   }, []);
-  console.log(movies);
   return (
     <div className="container">
       <MovieFilter />

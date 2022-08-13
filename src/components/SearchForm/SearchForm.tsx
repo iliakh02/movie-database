@@ -6,12 +6,16 @@ import './SearchForm.css';
 
 const SearchForm = () => {
   let navigate = useNavigate();
+  let searchValue = '';
 
   const onPressEnter = (event: any) => {
     if (event.key === 'Enter') {
-      console.log('Enter key pressed ✅');
-      navigate(`/search/${event.target.value}`);
+      search(searchValue);
     }
+  };
+
+  const search = (searchString: string) => {
+    navigate(`/search/${searchString}`);
   };
 
   return (
@@ -21,11 +25,17 @@ const SearchForm = () => {
         placeholder="Search"
         datatype="text"
         onKeyDown={onPressEnter}
+        onChange={(event) => {
+          searchValue = event.target.value;
+        }}
       />
       <FontAwesomeIcon
         icon={faSearch}
         color="#000d26"
         className="search-icon"
+        onClick={() => {
+          if (searchValue !== '') search(searchValue);
+        }}
       />
     </div>
   );

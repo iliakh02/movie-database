@@ -20,7 +20,7 @@ export class MovieService implements MovieServiceBase {
     return response;
   }
 
-  async getComingSoonMovies(): Promise<IMovie[]> {
+  async getInTheatersMovies(): Promise<IMovie[]> {
     const requestURL = `${BASE_API_URI}/ComingSoon/${API_KEY}`;
     let response: IMovie[] = [];
     const { data } = await axios.get(requestURL);
@@ -41,6 +41,14 @@ export class MovieService implements MovieServiceBase {
     let response: IMovieDetails = {} as IMovieDetails;
     const { data } = await axios.get(requestURL);
     response = data;
+    return response;
+  }
+
+  async getInTheaters(): Promise<IMovie[]> {
+    const requestURL = `${BASE_API_URI}/InTheaters/${API_KEY}`;
+    let response: IMovie[] = [];
+    const { data } = await axios.get(requestURL);
+    response = data.items;
     return response;
   }
 }

@@ -92,7 +92,11 @@ const MovieDescription = (props: MovieDescriptionProps) => {
             {props.actorList?.map((actor: IActor) => (
               <div className="actor" key={actor.id}>
                 <img
-                  src={actor.image}
+                  src={actor?.image
+                    .split('.')
+                    .splice(0, 3)
+                    .concat('_V1_UX100_CR0,4,100,100_AL_.jpg')
+                    .join('.')}
                   alt={actor.name}
                   className="actor-image"
                 />
@@ -114,6 +118,7 @@ const MovieDescription = (props: MovieDescriptionProps) => {
                   src={photo.image}
                   alt={photo.title}
                   className="movie-photo"
+                  loading="lazy"
                 />
               </div>
             ))}

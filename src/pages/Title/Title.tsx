@@ -21,7 +21,6 @@ const Title = () => {
   const { id } = useParams<string>();
   const movieService = new MovieService();
   useEffect(() => {
-    // setTitle(JSON.parse(JSON.stringify(TitleJ)));
     movieService
       .getTilteInfo(id as string)
       .then((data: IMovieDetails) => setTitle(data));

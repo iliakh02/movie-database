@@ -4,18 +4,18 @@ import IMovie from '../../Types/Movie.type';
 import MovieListView from '../../components/MovieListView/MovieListView';
 import MovieFilter from '../../components/MovieFilter/MovieFilter';
 
-const MostPopularMovies = () => {
+const InTheatersMovies = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
   const service = new MovieService();
   useEffect(() => {
-    service.getMostPopularMovies().then((data) => setMovies(data));
+    service.getInTheaters().then((data) => setMovies(data));
   }, []);
   return (
     <div className="container">
       <MovieFilter />
-      <MovieListView listName="Most popular movies:" movieList={movies} />
+      <MovieListView listName="In theaters movies:" movieList={movies} />
     </div>
   );
 };
 
-export default MostPopularMovies;
+export default InTheatersMovies;

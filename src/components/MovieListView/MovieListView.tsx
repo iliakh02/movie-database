@@ -16,7 +16,7 @@ const MovieListView = ({ listName, movieList }: MovieListProps) => {
         {movieList.map((movie) => {
           return (
             <div className="movie-item" key={movie.id}>
-              <Link to={`title/${movie.id}`}>
+              <Link to={`/title/${movie.id}`}>
                 <img
                   className="movie-image"
                   src={movie?.image

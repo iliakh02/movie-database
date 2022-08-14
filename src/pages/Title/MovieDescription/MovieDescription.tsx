@@ -112,7 +112,7 @@ const MovieDescription = (props: MovieDescriptionProps) => {
             <b>Photos:</b>
           </p>
           <Slider {...photosSliderSettings}>
-            {props.images.items?.map((photo: any) => (
+            {props.images?.items?.map((photo: any) => (
               <div className="photo">
                 <img
                   src={photo.image}

@@ -25,8 +25,13 @@ const Title = () => {
       .getTilteInfo(id as string)
       .then((data: IMovieDetails) => setTitle(data));
   }, [id]);
-
-  return (
+  return title.title === null ? (
+    <div className="container">
+      <p className="error-message">
+        Information about this movie doesnt exist.
+      </p>
+    </div>
+  ) : (
     <div className="container">
       <TitleTop
         titleName={title?.title}
@@ -39,7 +44,7 @@ const Title = () => {
       <TitleMedia
         image={title?.image}
         titleName={title?.title}
-        trailerLinkEmbed={title?.trailer.linkEmbed}
+        trailerLinkEmbed={title?.trailer?.linkEmbed}
       />
       <MovieDescription
         genreList={title?.genreList}
@@ -48,7 +53,7 @@ const Title = () => {
         writers={title?.writers}
         actorList={title?.actorList}
         images={title?.images}
-        budget={title?.boxOffice.budget}
+        budget={title?.boxOffice?.budget}
         companies={title?.companies}
       />
     </div>

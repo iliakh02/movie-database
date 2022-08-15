@@ -1,0 +1,10 @@
+.footer-text {
+  color: #b0b0b0;
+  font-family: 'Roboto', sans-serif;
+  font-size: calc(1px + 2vmin);
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 30px;
+}

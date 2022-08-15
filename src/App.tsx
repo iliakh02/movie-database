@@ -7,6 +7,7 @@ import MostPopularMovies from './pages/MostPopularMovies/MostPopularMovies';
 import Title from './pages/Title/Title';
 import InTheatersMovies from './pages/InTheatersMovies/InTheatersMovies';
 import Top250 from './pages/Top250/Top250';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -47,6 +48,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 };

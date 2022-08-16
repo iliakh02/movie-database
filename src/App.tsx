@@ -47,6 +47,8 @@ const App = () => {
             </Suspense>
           }
         />
+
+        <Route path="*" element={<MostPopularMovies />} />
       </Routes>
       <Footer />
     </div>

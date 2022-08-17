@@ -8,6 +8,7 @@ import Title from './pages/Title/Title';
 import InTheatersMovies from './pages/InTheatersMovies/InTheatersMovies';
 import Top250 from './pages/Top250/Top250';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -47,7 +48,10 @@ const App = () => {
                 <Title />
               </Suspense>
             }
-          />
+          />        
+          <Route path="*" element={<MostPopularMovies />} />
+          </Routes>
+          <Footer />
         </Routes>
       </ScrollToTop>
     </div>

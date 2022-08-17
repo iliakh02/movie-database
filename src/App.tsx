@@ -48,12 +48,11 @@ const App = () => {
                 <Title />
               </Suspense>
             }
-          />        
+          />
           <Route path="*" element={<MostPopularMovies />} />
-          </Routes>
-          <Footer />
         </Routes>
       </ScrollToTop>
+      <Footer />
     </div>
   );
 };

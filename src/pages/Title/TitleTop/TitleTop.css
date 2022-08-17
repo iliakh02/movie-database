@@ -1,0 +1,55 @@
+.title-top {
+  background: #101010;
+  color: white;
+  width: 100%;
+  margin-top: 30px;
+}
+.title {
+  margin: 0;
+}
+.movie-main-info {
+  font-size: calc(1px + 2vmin);
+  color: #939393;
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.movie-main-info>li {
+  margin-right: calc(14px + 2vmin);
+  padding-left: calc(-15px + 2vmin);
+}
+.year {
+  list-style: none;
+  padding: 0!important;
+}
+.movie-main-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.imdb-rating {
+  color: #c2c2c2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.imdb-rating-title {
+  font-size: calc(7px + 1vmin);
+  margin: 0;
+}
+.imdb-rating-block {
+  font-size: calc(6px + 1vmin);
+}
+.imdb-rating-container {
+  
+  display: flex;
+  align-items: center;
+}
+.imdb-rating-value, .imdb-rating-votes {
+  margin: 0;
+  font-size: calc(6px + 1vmin);
+}
+.imdb-rating-number {
+  color: white;
+}
